@@ -15,7 +15,7 @@ app.get('/abracadabra/usuarios', (req, res) => {
 app.use('/abracadabra/juego/:usuario', (req, res, next) => {
     const usuarioInscrito = req.params.usuario.replace(/^\w/, (u)=>u.toUpperCase())
     const jugador = users.includes (usuarioInscrito)
-    jugador == true ? next() :res.send('<img src="http://localhost:3000/who.jpeg">')
+    jugador == true ? next() :res.send('<img src="who.jpeg">')
 
 })
 
@@ -27,6 +27,6 @@ app.get('/abracadabra/conejo/:n', (req, res) => {
     const n = Math.floor(Math.random() * (4 - 1)) + 1;
     const conejo = req.params.n
     conejo == n
-    ? res.send('<img src="http://localhost:3000/conejito.jpg">')
-    : res.send('<img src="http://localhost:3000/voldemort.jpg">')   
+    ? res.send('<img src="conejito.jpg">')
+    : res.send('<img src="voldemort.jpg">')   
 })
